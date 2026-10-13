@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="plugin" group="system" method="upgrade">
+    <name>plg_system_wmlab</name>
+    <author>Webmarka</author>
+    <creationDate>2026-10</creationDate>
+    <version>1.0.0</version>
+    <license>GNU General Public License version 2 or later</license>
+    <description>Wmlab: assets, redirect and URI examples for Joomla 6</description>
+    <namespace path="src">Lab\Plugin\System\Wmlab</namespace>
+    <files>
+        <folder plugin="wmlab">services</folder>
+        <folder>src</folder>
+    </files>
+    <media destination="plg_system_wmlab" folder="media">
+        <folder>css</folder>
+        <folder>js</folder>
+    </media>
+</extension>

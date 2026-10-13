@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="plugin" group="task" method="upgrade">
+    <name>plg_task_wmlab</name>
+    <author>Webmarka</author>
+    <creationDate>2026-10</creationDate>
+    <version>1.0.0</version>
+    <license>GNU General Public License version 2 or later</license>
+    <description>PLG_TASK_WMLAB_XML_DESCRIPTION</description>
+    <namespace path="src">Lab\Plugin\Task\Wmlab</namespace>
+    <files>
+        <folder plugin="wmlab">services</folder>
+        <folder>src</folder>
+    </files>
+    <languages>
+        <language tag="en-GB">language/en-GB/plg_task_wmlab.ini</language>
+        <language tag="en-GB">language/en-GB/plg_task_wmlab.sys.ini</language>
+    </languages>
+</extension>

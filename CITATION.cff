@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Если вы используете этот доклад, цитируйте его так."
+title: "Joomla 6: возможности, ключи и приёмы"
+type: generic
+authors:
+  - family-names: Sakhanov
+    given-names: Beibit
+version: "1.0"
+date-released: "2026-10-13"
+license: CC-BY-4.0
+url: "https://github.com/bsakhanov/joomla-6-keys-research"
+abstract: "Справочный доклад по Joomla 6: версии и сроки поддержки, устройство ядра, Web Asset Manager, шаблоны и переопределения, поля и метки, Web Services API, командная строка и планировщик, ключи конфигурации, безопасность, приёмы и кейсы. Проверено на 6.1.4 и 6.2.0-rc2."
+keywords:
+  - Joomla
+  - Joomla 6
+  - CMS
+  - Web Services API
+  - documentation

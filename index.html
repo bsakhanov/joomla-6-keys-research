@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Joomla 6: возможности, ключи и приёмы — справочный доклад</title>
+<meta name="description" content="Справочный доклад по Joomla 6: версии и сроки поддержки, устройство ядра, Web Asset Manager, шаблоны, поля и метки, Web Services API, командная строка, ключи конфигурации, безопасность, приёмы и кейсы. Проверено на 6.1.4 и 6.2.0-rc2.">
+<meta name="author" content="Бейбит Саханов">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Joomla 6: возможности, ключи и приёмы">
+<meta property="og:description" content="Справочный доклад по Joomla 6: версии и сроки поддержки, устройство ядра, Web Asset Manager, шаблоны, поля и метки, Web Services API, командная строка, ключи конфигурации, безопасность, приёмы и кейсы. Проверено на 6.1.4 и 6.2.0-rc2.">
+<meta property="og:url" content="https://bsakhanov.github.io/joomla-6-keys-research/">
+<meta property="og:locale" content="ru_RU">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%97%9D%3C/text%3E%3C/svg%3E">
+<style>
+:root{--bg:#faf7f2;--ink:#231f1a;--soft:#6a6259;--card:#fff;--line:#e5ddd1;--accent:#9b5a25;--accent-ink:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#171512;--ink:#ece6dc;--soft:#a39a8d;--card:#201d19;--line:#3a352e;--accent:#e0a06a;--accent-ink:#1a1612}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:clamp(20px,5vw,56px) clamp(16px,4vw,32px) 64px}
+.kicker{font:600 13px/1 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.04em;color:var(--accent);margin:0 0 18px}
+h1{font:700 clamp(30px,6vw,48px)/1.12 Georgia,"Times New Roman",serif;margin:0 0 14px;letter-spacing:-.01em}
+.lead{font-size:clamp(18px,2.4vw,21px);color:var(--soft);margin:0 0 26px;max-width:40em}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 36px}
+.btn{display:inline-block;padding:11px 18px;border-radius:10px;border:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:600;background:var(--card)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn:hover{filter:brightness(1.06)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:0 0 40px}
+.fact{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.fact b{display:block;font:700 26px/1.1 Georgia,serif;color:var(--accent)}.fact span{color:var(--soft);font-size:14px}
+h2{font:700 24px/1.25 Georgia,serif;margin:44px 0 12px}
+p{margin:0 0 14px}a{color:var(--accent)}
+ol.toc{columns:2 280px;column-gap:32px;padding-left:1.4em;margin:0}.toc li{margin:0 0 6px;break-inside:avoid}
+.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;font-size:15.5px}
+footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);color:var(--soft);font-size:14px}
+</style>
+</head>
+<body>
+<main>
+<p class="kicker">СПРАВОЧНЫЙ ДОКЛАД · РЕДАКЦИЯ 1.0 · СОСТОЯНИЕ НА 12 ОКТЯБРЯ 2026 ГОДА</p>
+<h1>Joomla 6: возможности, ключи и приёмы</h1>
+<p class="lead">Справочный доклад по устройству ядра, API, командной строке, шаблонам, безопасности и практике сайтостроения. Проверен на живых установках Joomla 6.1.4 и 6.2.0-rc2.</p>
+<div class="cta">
+<a class="btn primary" href="doklad/joomla-6-doklad.html">Читать доклад</a>
+<a class="btn" href="https://github.com/bsakhanov/joomla-6-keys-research/blob/main/doklad/joomla-6-doklad.md">Markdown</a>
+<a class="btn" href="https://github.com/bsakhanov/joomla-6-keys-research/releases/tag/v1.0.0">Релиз v1.0.0</a>
+<a class="btn" href="https://github.com/bsakhanov/joomla-6-keys-research">Репозиторий</a>
+</div>
+<div class="facts">
+<div class="fact"><b>17</b><span>глав и три приложения</span></div>
+<div class="fact"><b>23 тыс.</b><span>слов</span></div>
+<div class="fact"><b>53</b><span>таблицы</span></div>
+<div class="fact"><b>236</b><span>маршрутов API</span></div>
+<div class="fact"><b>36</b><span>консольных команд</span></div>
+<div class="fact"><b>251</b><span>расширение в пакете</span></div>
+<div class="fact"><b>67</b><span>ключей конфигурации</span></div>
+<div class="fact"><b>34</b><span>источника</span></div>
+</div>
+<h2>О чём доклад</h2>
+<p>Доклад собирает в одном месте то, что нужно знать о Joomla 6 разработчику сайтов и редакции: версии и сроки поддержки, устройство ядра, подключение скриптов и стилей, шаблоны и переопределения, поля и метки, API и командную строку, ключи конфигурации и доступа, приёмы и кейсы.</p>
+<p>Рядом с каждым утверждением стоит знак проверки: «стенд» — воспроизведено запуском на установке 6.1.4; «исходники» — прочитано в коде пакета; «документация» — сказано в официальном документе проекта; «практика» — наблюдение автора по рабочим проектам; «сторонний» — сообщено источником вне проекта; «исследование» — взято из исследования «Joomla 6 для новостной редакции».</p>
+<h2>Содержание</h2>
+<ol class="toc" style="list-style:none;padding-left:0"><li><a href="doklad/joomla-6-doklad.html#kak-chitat">Как читать доклад</a></li><li><a href="doklad/joomla-6-doklad.html#kartina">1 Joomla 6 в одной картине</a></li><li><a href="doklad/joomla-6-doklad.html#novoe">2 Что нового в 6.0, 6.1 и 6.2</a></li><li><a href="doklad/joomla-6-doklad.html#yadro">3 Устройство ядра</a></li><li><a href="doklad/joomla-6-doklad.html#assets">4 Web Asset Manager: как подключать скрипты и стили</a></li><li><a href="doklad/joomla-6-doklad.html#shablony">5 Шаблоны, дочерние шаблоны и переопределения</a></li><li><a href="doklad/joomla-6-doklad.html#soderzhimoe">6 Содержимое: категории, метки, поля, версии</a></li><li><a href="doklad/joomla-6-doklad.html#api">7 Web Services API</a></li><li><a href="doklad/joomla-6-doklad.html#cli">8 Командная строка и планировщик задач</a></li><li><a href="doklad/joomla-6-doklad.html#kod">9 Приёмы кода для расширений</a></li><li><a href="doklad/joomla-6-doklad.html#bezopasnost">10 Ключи и безопасность</a></li><li><a href="doklad/joomla-6-doklad.html#proizvoditelnost">11 Производительность и масштаб</a></li><li><a href="doklad/joomla-6-doklad.html#yazyki">12 Языки, адреса и структурированные данные</a></li><li><a href="doklad/joomla-6-doklad.html#priemy">13 Каталог приёмов</a></li><li><a href="doklad/joomla-6-doklad.html#keisy">14 Кейсы</a></li><li><a href="doklad/joomla-6-doklad.html#grabli">15 Каталог граблей</a></li><li><a href="doklad/joomla-6-doklad.html#obnovlenie">16 Обновление и переезд: чек-лист</a></li><li><a href="doklad/joomla-6-doklad.html#karta">17 Дорожная карта и поддержка</a></li><li><a href="doklad/joomla-6-doklad.html#prilozhenie-a">Приложение А. Ключи конфигурации</a></li><li><a href="doklad/joomla-6-doklad.html#prilozhenie-b">Приложение Б. Карта API</a></li><li><a href="doklad/joomla-6-doklad.html#prilozhenie-v">Приложение В. Словарь терминов</a></li><li><a href="doklad/joomla-6-doklad.html#istochniki">Список использованных источников</a></li></ol>
+<h2>Что проверено, а что нет</h2>
+<p>Проверено: полные пакеты 6.1.4 и 6.2.0-rc2 на PHP 8.3.6, MariaDB 10.11 и Apache 2.4; 236 маршрутов API; три собственных плагина (системный, консольный и плагин планировщика); сценарии вне веб-контекста; запись материалов, меток и настраиваемых полей из кода. Не проверялись: поведение под большой нагрузкой, совместимость сторонних расширений с Joomla 6, PostgreSQL и Windows-хостинг. Описание 6.2 опирается на rc2 и дорожную карту проекта; после выхода стабильной 6.2.0 раздел «Что нового в 6.2» будет перепроверен.</p>
+<h2>Связанные материалы</h2>
+<p><a href="https://webmarka.kz/research/joomla-6-newsroom/">Исследование «Joomla 6 для новостной редакции»</a> — доклад, лонгрид и разбор редакционного конвейера в снимках; <a href="https://github.com/bsakhanov/joomla-6-newsroom-research">репозиторий исследования</a>.</p>
+<h2>Лицензия и цитирование</h2>
+<div class="box"><p>Тексты, таблицы и схемы — <a href="https://creativecommons.org/licenses/by/4.0/deed.ru">CC BY 4.0</a>; код в каталоге <code>lab/</code> — MIT.</p>
+<p style="margin:0">Саханов, Б. Joomla 6: возможности, ключи и приёмы : справочный доклад. Редакция 1.0. — 2026. — URL: https://bsakhanov.github.io/joomla-6-keys-research/</p></div>
+<footer>© 2026 Бейбит Саханов · <a href="https://github.com/bsakhanov/joomla-6-keys-research">исходники на GitHub</a></footer>
+</main>
+</body>
+</html>

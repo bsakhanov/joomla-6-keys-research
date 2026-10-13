@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="plugin" group="console" method="upgrade">
+    <name>plg_console_wmlab</name>
+    <author>Webmarka</author>
+    <creationDate>2026-10</creationDate>
+    <version>1.0.0</version>
+    <license>GNU General Public License version 2 or later</license>
+    <description>Wmlab: custom CLI command example</description>
+    <namespace path="src">Lab\Plugin\Console\Wmlab</namespace>
+    <files>
+        <folder plugin="wmlab">services</folder>
+        <folder>src</folder>
+    </files>
+</extension>
