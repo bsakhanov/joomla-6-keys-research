@@ -1,0 +1,58 @@
+name: Файлы релиза
+
+# Прикрепляет к релизу доклад (HTML и Markdown) и три плагина стенда.
+# Запускается при публикации релиза, вручную и при изменении этого файла.
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Тег релиза (по умолчанию — последний)"
+        required: false
+  push:
+    branches: [main]
+    paths: [".github/workflows/release-assets.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  assets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Определить тег релиза
+        id: tag
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT_TAG: ${{ github.event.release.tag_name }}
+          INPUT_TAG: ${{ inputs.tag }}
+        run: |
+          TAG="${EVENT_TAG:-$INPUT_TAG}"
+          if [ -z "$TAG" ]; then
+            TAG=$(gh release view --repo "$GITHUB_REPOSITORY" --json tagName -q .tagName)
+          fi
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+
+      - name: Получить исходники тега
+        env:
+          TAG: ${{ steps.tag.outputs.tag }}
+        run: git clone --quiet --depth 1 --branch "$TAG" "https://github.com/$GITHUB_REPOSITORY" src
+
+      - name: Собрать файлы
+        env:
+          TAG: ${{ steps.tag.outputs.tag }}
+        run: |
+          set -e
+          mkdir dist
+          cp src/doklad/joomla-6-doklad.html src/doklad/joomla-6-doklad.md dist/
+          for p in system console task; do
+            (cd "src/lab/plg_${p}_wmlab" && zip -qr "../../../dist/plg_${p}_wmlab-${TAG}.zip" .)
+          done
+          ls -la dist
+
+      - name: Прикрепить к релизу
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.tag.outputs.tag }}
+        run: gh release upload "$TAG" dist/* --repo "$GITHUB_REPOSITORY" --clobber
