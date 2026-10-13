@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bsakhanov.github.io/joomla-6-keys-research/sitemap.xml

@@ -8,6 +8,8 @@
 
 Связанные материалы автора: [исследование «Joomla 6 для новостной редакции»](https://webmarka.kz/research/joomla-6-newsroom/) — [доклад](https://webmarka.kz/research/joomla-6-newsroom/doklad/joomla-6-news-platform-research.html) · [лонгрид](https://webmarka.kz/research/joomla-6-newsroom/longread/joomla-6-longread-v1.1.html) · [конвейер в скриншотах](https://webmarka.kz/research/joomla-6-newsroom/konveyer-v-skrinshotakh/) · [репозиторий](https://github.com/bsakhanov/joomla-6-newsroom-research)
 
+Публикация: [репозиторий на GitHub](https://github.com/bsakhanov/joomla-6-keys-research) · [последний релиз и файлы для скачивания](https://github.com/bsakhanov/joomla-6-keys-research/releases/latest) · лицензия [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.ru)
+
 # Как читать доклад
 
 **Ключ в трёх значениях.** В заглавии слово «ключ» берётся в трёх значениях, и доклад держит их раздельно. Во-первых, ключ есть параметр, который открывает возможность: ключ конфигурации, имя события, имя ассета. Во-вторых, ключ есть токен доступа: секрет сайта, токен программного интерфейса, токен защиты форм. В-третьих, ключ есть приём — короткое знание, которое отпирает целую задачу и которое обычно не записано в документации. Первое значение раскрывают главы об устройстве ядра и [приложение А](#приложение-а-ключи-конфигурации), второе — главы об API и безопасности, третье — каталоги приёмов и граблей.
