@@ -1,10 +1,10 @@
 # Joomla 6: возможности, ключи и приёмы
 
-Справочный доклад по устройству ядра, API, командной строке, шаблонам, безопасности и практике сайтостроения. Проверен на живых установках Joomla 6.1.4 (стабильная) и 6.2.0-rc2. Редакция 1.0, состояние на 12 октября 2026 года.
+Справочный доклад по устройству ядра, API, командной строке, шаблонам, безопасности и практике сайтостроения. Проверен на живых установках Joomla 6.1.4 и 6.2.0 (а также на кандидате в релизы 6.2.0-rc2). Редакция 1.1, состояние на 13 октября 2026 года.
 
 **Читать онлайн:** https://bsakhanov.github.io/joomla-6-keys-research/ · **Релиз:** https://github.com/bsakhanov/joomla-6-keys-research/releases/tag/v1.0.0
 
-**In English.** A reference report on Joomla 6, written in Russian and verified on live installs of 6.1.4 and 6.2.0-rc2: core architecture, Web Asset Manager, templates and overrides, custom fields and tags, Web Services API (236 routes), CLI and scheduler, configuration keys, security, performance, pitfalls and an upgrade checklist. Texts are CC BY 4.0; code in `lab/` is MIT.
+**In English.** A reference report on Joomla 6, written in Russian and verified on live installs of 6.1.4 and 6.2.0: core architecture, Web Asset Manager, templates and overrides, custom fields and tags, Web Services API (236 routes), CLI and scheduler, configuration keys, security, performance, pitfalls and an upgrade checklist. Texts are CC BY 4.0; code in `lab/` is MIT.
 
 ## Что внутри
 
@@ -24,11 +24,11 @@
 
 ## Что проверено, а что нет
 
-Проверено: полные пакеты 6.1.4 и 6.2.0-rc2 на PHP 8.3.6, MariaDB 10.11 и Apache 2.4; 236 маршрутов API; три собственных плагина (системный, консольный и плагин планировщика); сценарии вне веб-контекста; запись материалов, меток и настраиваемых полей из кода. Не проверялись: поведение под большой нагрузкой, совместимость сторонних расширений с Joomla 6, PostgreSQL и Windows-хостинг.
+Проверено: полные пакеты 6.1.4, 6.2.0-rc2 и 6.2.0 на PHP 8.3.6, MariaDB 10.11 и Apache 2.4; 236 маршрутов API; три собственных плагина (системный, консольный и плагин планировщика); сценарии вне веб-контекста; запись материалов, меток и настраиваемых полей из кода. Не проверялись: поведение под большой нагрузкой, совместимость сторонних расширений с Joomla 6, PostgreSQL и Windows-хостинг.
 
 ## Статус версии 6.2
 
-Описание 6.2 опирается на 6.2.0-rc2 и на дорожную карту проекта. Стабильный выпуск назначен на 13 октября 2026 года; прошлые выпуски публиковались около 16:00 UTC. После выхода раздел «Что нового в 6.2» нужно перепроверить.
+Joomla 6.2.0 вышла 13 октября 2026 года в 16:00 UTC. Описание 6.2 проверено на стабильном пакете: от rc2 до 6.2.0 изменились четыре файла (файл версии, список пакетов Composer, манифест пакета и файл метаданных FIDO), поэтому проверки, сделанные на rc2, остаются в силе.
 
 ## Связанные материалы
 
@@ -41,6 +41,6 @@
 
 ## Как цитировать
 
-Саханов, Б. Joomla 6: возможности, ключи и приёмы : справочный доклад. Редакция 1.0. — 2026. — URL: https://github.com/bsakhanov/joomla-6-keys-research
+Саханов, Б. Joomla 6: возможности, ключи и приёмы : справочный доклад. Редакция 1.1. — 2026. — URL: https://github.com/bsakhanov/joomla-6-keys-research
 
 Машиночитаемая запись — в файле `CITATION.cff`.
